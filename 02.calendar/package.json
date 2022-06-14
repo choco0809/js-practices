@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "scripts": {
+    "lint": "eslint"
+  },
   "devDependencies": {
     "eslint": "^8.17.0",
     "eslint-config-standard": "^17.0.0",
