@@ -7,8 +7,8 @@
 <body>
     <script>
       async function getHtmlData(url) {
-        let resource =  await fetch(url)
-        let data = await resource.text()
+        const resource =  await fetch(url)
+        const data = await resource.text()
         console.log(data)
       }
       getHtmlData('https://bootcamp.fjord.jp/')
