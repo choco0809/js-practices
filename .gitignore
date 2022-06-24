@@ -129,3 +129,4 @@ dist
 # RubyMin .idea/* は対象外とする
 .idea/*
 01.fizzbuzz/.idea/*
+02.calendar/.idea/*
