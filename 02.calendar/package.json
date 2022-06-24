@@ -1,9 +1,17 @@
 {
+  "type": "module",
+  "scripts": {
+    "lint": "eslint"
+  },
   "devDependencies": {
-    "eslint": "^8.15.0",
+    "eslint": "^8.17.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.28.0",
+    "minimist": "^1.2.6"
   }
 }
