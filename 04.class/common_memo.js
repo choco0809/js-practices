@@ -7,7 +7,7 @@ class CommonMemo {
   }
 
   async addNewMemo () {
-    const params = await this.standaerdInput()
+    const params = await this.#standaerdInput()
     // データをmemoテーブルへ登録する
     // memo [title, contents]
     await this.db.addMemos(params[0], params.slice(1).join('\n'))
@@ -29,7 +29,7 @@ class CommonMemo {
     if (Object.keys(memos).length === 0) {
       console.log('No memo have been registered.')
     } else {
-      const id = await this.choiceMemo(memos, 'Choose a note you want to see:')
+      const id = await this.#choiceMemo(memos, 'Choose a note you want to see:')
       const memo = await this.db.fetchTargetRecoredFromMemo(id)
       console.log(Object.values(memo).join('\n'))
     }
@@ -40,13 +40,13 @@ class CommonMemo {
     if (Object.keys(memos).length === 0) {
       console.log('No memo have been registered.')
     } else {
-      const id = await this.choiceMemo(memos, 'Choose a note you want to delete:')
+      const id = await this.#choiceMemo(memos, 'Choose a note you want to delete:')
       await this.db.deleteTargetRecoredFromMemo(id)
       console.log('memo removed.')
     }
   }
 
-  standaerdInput () {
+  #standaerdInput () {
     return new Promise(resolve => {
       process.stdin.resume()
       process.stdin.setEncoding('utf8')
@@ -63,7 +63,7 @@ class CommonMemo {
     })
   }
 
-  choiceMemo (memos, messageString) {
+  #choiceMemo (memos, messageString) {
     return new Promise(resolve => {
       const prompt = new Select({
         message: messageString,
